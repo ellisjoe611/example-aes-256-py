@@ -45,7 +45,6 @@ class AESCipherV2:
         return s[: -ord(s[len(s) - 1 :])]
 
 
-# Dana
 class AESCipher:
     def __init__(self, keytext: str):
         self.bs = AES.block_size
@@ -62,7 +61,7 @@ class AESCipher:
         cipher = AES.new(self.key, AES.MODE_CBC, iv)
         return base64.b64encode(iv + cipher.encrypt(raw.encode()))
 
-    def decrypt(self, encrypted: Union[bytes, str]) -> str:
+    def decrypt(self, encrypted: Union[bytes, bytearray, memoryview, str]) -> str:
         """
         base64 형식으로 암호화된 데이터를 str으로 복호화한다.
         :param encrypted: base64 형식의 bytes 또는 str
