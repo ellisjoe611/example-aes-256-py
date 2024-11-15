@@ -10,7 +10,7 @@ Hopefully this will be helpful to understand the basic process of the <strong>en
 1. Create secret key with the algorithm like SHA-256 hashing.
 2. Additional (blank) buffers will be padded at the end of the original data to make sure <strong>the whole data length will be multiple of the block size. (mostly 16)</strong>
 3. Encrypt the data above with secret key & <strong>IV(Initialization Vector)</strong> data. (IV is used for the encryption of the block initialization)
-4. Combine IV(Initialization Vector) & encrypted data as the result.
+4. Combine IV & encrypted data in <strong>base64</strong> format as the result.
 
 <img src="./images/process.png" style="margin: 5px;"/>
 <br/>
